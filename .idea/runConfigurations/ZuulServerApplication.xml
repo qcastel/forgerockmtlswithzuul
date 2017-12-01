@@ -1,0 +1,24 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ZuulServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.forgerock.example.mtls.zuul.ZuulServerApplication" />
+    <option name="SHOW_IN_DASHBOARD" value="true" />
+    <option name="ACTIVE_PROFILES" value="dev" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <additionalParameters>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="spring.cloud.config.uri" />
+        <option name="value" value="http://config.forgerock.example.com:8888/" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="spring.cloud.config.label" />
+        <option name="value" value="master" />
+      </param>
+    </additionalParameters>
+    <module name="forgerock-zuul" />
+    <envs />
+    <method />
+  </configuration>
+</component>

@@ -1,0 +1,17 @@
+eureka:
+    client:
+        fetchRegistry: false
+        registerWithEureka: false
+    instance:
+        hostname: eureka.forgerock.example.com
+    server:
+        enableSelfPreservation: false
+server:
+    hostname: eureka.forgerock.example.com
+    port: 8081
+    ssl:
+        enabled: false
+        key-alias: "eureka.forgerock.example.com"
+spring:
+    application:
+        name: eureka

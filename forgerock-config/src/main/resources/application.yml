@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${user.dir}
+           - "forgerock-config/forgerock-git-config/*"
+           - "forgerock-config/forgerock-git-config"
+          repos:
+            dev:
+              pattern:
+                - "*/dev"
+              uri: ${user.dir}
+              searchPaths:
+               - "forgerock-config/forgerock-git-config/*"
+               - "forgerock-config/forgerock-git-config"
+server:
+  port: 8888

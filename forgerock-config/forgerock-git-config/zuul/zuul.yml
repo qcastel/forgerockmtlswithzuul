@@ -1,0 +1,43 @@
+server:
+    hostname: zuul.forgerock.example.com
+    port: 8083
+    ssl:
+        enabled: true
+        key-alias: "zuul.forgerock.example.com"
+        clientAuth: want
+
+info:
+  component: Edge Server
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+
+zuul:
+  sensitiveHeaders: Set-Cookie
+  routes:
+    aisp-core:
+      path: /hello/**
+      serviceId: hello
+    app:
+      path: /**
+      stripPrefix: false
+  sslHostnameValidationEnabled: false
+filter:
+  routes:
+    - hostname: hello.forgerock.example.com
+      prefix: /hello
+
+
+ribbon:
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    registerWithEureka: false

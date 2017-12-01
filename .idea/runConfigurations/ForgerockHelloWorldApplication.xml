@@ -1,0 +1,29 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ForgerockHelloWorldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <pattern>
+        <option name="PATTERN" value="com.forgerock.example.mtls.hello.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.forgerock.example.mtls.hello.ForgerockHelloWorldApplication" />
+    <option name="SHOW_IN_DASHBOARD" value="true" />
+    <option name="ACTIVE_PROFILES" value="dev" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <additionalParameters>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="spring.cloud.config.uri" />
+        <option name="value" value="http://config.forgerock.example.com:8888/" />
+      </param>
+      <param>
+        <option name="enabled" value="true" />
+        <option name="name" value="spring.cloud.config.label" />
+        <option name="value" value="master" />
+      </param>
+    </additionalParameters>
+    <module name="forgerock-hello" />
+    <envs />
+    <method />
+  </configuration>
+</component>

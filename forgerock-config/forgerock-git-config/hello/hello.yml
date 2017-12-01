@@ -1,0 +1,10 @@
+server:
+    hostname: hello.forgerock.example.com
+    port: 8082
+    ssl:
+        client-auth: want
+        enabled: true
+        key-alias: "hello.forgerock.example.com"
+spring:
+    application:
+        name: hello

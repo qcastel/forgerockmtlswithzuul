@@ -1,0 +1,24 @@
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: ${server.port}
+    statusPageUrl: https://${eureka.hostname}:${eureka.instance.secure-port}/info
+    healthCheckUrl: https://${eureka.hostname}:${eureka.instance.secure-port}/health
+    homePageUrl: https://${eureka.hostname}:${eureka.instance.secure-port}/
+  client:
+      service-url:
+          defaultZone: http://eureka.forgerock.example.com:8081/eureka/
+ribbon:
+  eureka:
+    enabled: true
+
+server:
+    ssl:
+        key-store: classpath:keystore/keystore.jks
+        trust-store: classpath:keystore/truststore.jks
+        key-password: changeit
+        key-store-password: changeit
+        trust-store-password: changeit
