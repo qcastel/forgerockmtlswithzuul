@@ -54,12 +54,31 @@ Certificate for <172.16.100.53> doesn't match any of the subject alternative nam
 That's due to zuul checking the hostname, even if sslHostnameValidationEnabled=false. Don't know why it's ignoring 
 this option
 
-2) In my other project, where Zuul for a reason doesn't check the hostname, I had
+EDIT: After digging a bit, I found I was affected by #251. The only solution I had was to upgrade to 2.0.0-M6 to get 
+this fix.
+EDIT: After investigating, I found out the option sslHostnameValidationEnabled wasn't doing its job. #2503
+EDIT: Ribbon is causing me issues, by re-enabling hostname validation anyway. See #2506 Found a workaround for now.
+
+
+2) When I hit my hello service via zuul, so https://hello.forgerock.example.com:8083/hello/mtlsTest
+I got:
+
 ```$xslt
 {"message":"Hello anonymous! Add your certificate into your web browser or postman to authenticate","authorities":[]}
 ```
 
-Meaning the certificates is not going through.
+When I hit the hello app directly, I got:
+
+```$xslt
+{
+    message: "Hello subject: CN=forgerock example CA, OU=forgerock.example.com, O=ForgeRock, L=Bristol, ST=Avon, C=UK!",
+    authorities: [
+        {
+            authority: "AUTHENTICATED"
+        }
+    ]
+}
+```
 
 
 Thanks a lot of any help! I'm quite stuck.
