@@ -3,6 +3,7 @@ package com.forgerock.example.mtls.hello;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -17,6 +18,7 @@ import com.forgerock.example.mtls.hello.x509.MTLSDetailsService;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableWebSecurity
+@EnableEurekaClient
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @ComponentScan
 public class ForgerockHelloWorldApplication extends WebSecurityConfigurerAdapter {

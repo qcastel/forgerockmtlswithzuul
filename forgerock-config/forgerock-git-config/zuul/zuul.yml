@@ -4,7 +4,7 @@ server:
     ssl:
         enabled: true
         key-alias: "zuul.forgerock.example.com"
-        clientAuth: want
+        clientAuth: need
 
 info:
   component: Edge Server
@@ -27,7 +27,8 @@ zuul:
     app:
       path: /**
       stripPrefix: false
-  sslHostnameValidationEnabled: false
+  sslHostnameValidationEnabled: true
+
 filter:
   routes:
     - hostname: hello.forgerock.example.com
@@ -37,7 +38,3 @@ filter:
 ribbon:
   eureka:
     enabled: true
-
-eureka:
-  client:
-    registerWithEureka: false

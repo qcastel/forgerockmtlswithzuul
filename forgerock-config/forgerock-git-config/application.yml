@@ -1,4 +1,5 @@
 eureka:
+  hostname: eureka.forgerock.example.com
   instance:
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
