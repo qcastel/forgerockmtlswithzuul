@@ -27,12 +27,7 @@ zuul:
     app:
       path: /**
       stripPrefix: false
-  sslHostnameValidationEnabled: true
-
-filter:
-  routes:
-    - hostname: hello.forgerock.example.com
-      prefix: /hello
+  sslHostnameValidationEnabled: false
 
 
 ribbon:

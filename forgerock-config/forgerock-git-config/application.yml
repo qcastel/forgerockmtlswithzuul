@@ -16,6 +16,8 @@ ribbon:
   eureka:
     enabled: true
 
+zuul-cert-sub: CN=zuul.forgerock.example.com, OU=forgerock.example.com, O=ForgeRock, L=Bristol, ST=Avon, C=UK
+
 server:
     ssl:
         key-store: classpath:keystore/keystore.jks
